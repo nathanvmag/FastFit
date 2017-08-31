@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3cf77bcd612c0b14f97659e78b0a3adf
-timeCreated: 1504201469
+guid: b0efa0ba006a73a49b5a696095fb2828
+timeCreated: 1504200204
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: news_0
+    21300000: "Configura\xE7\xE3o_0"
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -35,12 +35,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 10, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -68,26 +68,26 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Android
-    maxTextureSize: 2048
-    textureFormat: -1
+    maxTextureSize: 1024
+    textureFormat: 47
     textureCompression: 1
-    compressionQuality: 50
+    compressionQuality: 100
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: news_0
+      name: "Configura\xE7\xE3o_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 43
-        width: 454
-        height: 259
+        y: 290
+        width: 1201
+        height: 1824
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
