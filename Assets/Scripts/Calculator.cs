@@ -89,13 +89,13 @@ public class Calculator : MonoBehaviour {
             if (fries < 0) { fries = 0; }
             if (iceCream < 0) { iceCream = 0; }
             if (hotDog < 0) { hotDog = 0; }
-            burgerNum.text = burger.ToString();
-            pizzaNum.text = pizza.ToString();
-            chocNum.text = choc.ToString();
-            cokeNum.text = coke.ToString();
-            friesNum.text = fries.ToString();
-            iceNum.text = iceCream.ToString();
-            hotNum.text = hotDog.ToString();
+			burgerNum.text = burger.ToString() + " hambúrguer(es)";
+			pizzaNum.text = pizza.ToString() + " pizza(s)";
+			chocNum.text = choc.ToString() + " chocolate(s)";
+			cokeNum.text = coke.ToString() + " refrigerante(s)";
+			friesNum.text = fries.ToString() + " batata(s) frita(s)";
+			iceNum.text = iceCream.ToString() + " sorvete(s)";
+			hotNum.text = hotDog.ToString() + " cachorro(s) quente(s)";
             atualizar = false;
         }
     }
