@@ -5,7 +5,7 @@ using UnityEngine;
 public class MenuMover : MonoBehaviour {
     [SerializeField]
     GameObject[] Scenes;
-    int goTO;
+    public static int goTO;
 	// Use this for initialization
 	void Start () {
         goTO = 2;

@@ -102,14 +102,13 @@ public class Calculator : MonoBehaviour {
 
     public void OnClickCalcular() {
         total = burgerKcal * burger + pizzaKcal * pizza + chocolateKcal * choc + cokeKcal * coke + friesKcal * fries + iceCreamKcal * iceCream + hotDogKcal * hotDog;
-        deact.SetActive(false);
-        act.SetActive(true);
+		MenuMover.goTO = 5;
+
         result.text = total.ToString();
     }
 
     public void OnClickVoltarCalc() {
-        deact.SetActive(true);
-        act.SetActive(false);
+		MenuMover.goTO = 1;
         total = 0;
         burger = 0;
         pizza = 0;
