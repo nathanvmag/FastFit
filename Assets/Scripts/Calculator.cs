@@ -18,9 +18,15 @@ public class Calculator : MonoBehaviour {
     public Button burgerPlus, burgerMinus, pizzaPlus, pizzaMinus, chocPlus, chocMinus, cokePlus, cokeMinus,
         friesPlus, friesMinus, icePlus, iceMinus, hotPlus, hotMinus, calcular;
     public GameObject deact, act, panel;
-
+    public int[] valores;
+    public Text[] txs;
     bool atualizar = false;
 
+    public void Start()
+    {
+        valores = new int[7] { burger, pizza, choc, fries, iceCream, hotDog,coke };
+        txs = new Text[7] { burgerNum, pizzaNum, chocNum, friesNum, iceNum, hotNum, cokeNum };
+    }
     public void OnClickBurgerPlus () {
 		burger += 1;
         atualizar = true;
@@ -80,6 +86,16 @@ public class Calculator : MonoBehaviour {
 
     void Update()
     {
+        valores = new int[7] { burger, pizza, choc, fries, iceCream, hotDog, coke };
+        txs = new Text[7] { burgerNum, pizzaNum, chocNum, friesNum, iceNum, hotNum, cokeNum };
+        for (int i=0;i<valores.Length;i++)
+        {
+            if (valores[i]>0)
+            {
+                txs[i].enabled = true;
+            }
+            else txs[i].enabled = false;
+        }
         if (atualizar)
         {
             if (burger < 0) { burger = 0; }
@@ -89,15 +105,31 @@ public class Calculator : MonoBehaviour {
             if (fries < 0) { fries = 0; }
             if (iceCream < 0) { iceCream = 0; }
             if (hotDog < 0) { hotDog = 0; }
-			burgerNum.text = burger.ToString() + " hambúrguer(es)";
-			pizzaNum.text = pizza.ToString() + " pizza(s)";
-			chocNum.text = choc.ToString() + " chocolate(s)";
-			cokeNum.text = coke.ToString() + " refrigerante(s)";
-			friesNum.text = fries.ToString() + " batata(s) frita(s)";
-			iceNum.text = iceCream.ToString() + " sorvete(s)";
-			hotNum.text = hotDog.ToString() + " cachorro(s) quente(s)";
+
+			if(burger>1) burgerNum.text = burger.ToString() + " hambúrgueres";
+            else burgerNum.text = burger.ToString() + " hambúrguer";
+
+            if (pizza > 1) pizzaNum.text = pizza.ToString() + " pizzas";
+            else pizzaNum.text = pizza.ToString() + " pizza";
+
+            if(choc > 1) chocNum.text = choc.ToString() + " chocolates";
+            else chocNum.text = choc.ToString() + " chocolate";
+
+            if(coke > 1) cokeNum.text = coke.ToString() + " refrigerantes";
+            else cokeNum.text = coke.ToString() + " refrigerante";
+
+            if(fries > 1) friesNum.text = fries.ToString() + " batatas fritas";
+            else friesNum.text = fries.ToString() + " batata frita";
+
+            if(iceCream > 1) iceNum.text = iceCream.ToString() + " sorvetes";
+            else iceNum.text = iceCream.ToString() + " sorvete";
+
+            if(hotDog > 1) hotNum.text = hotDog.ToString() + " cachorros quentes";
+            else hotNum.text = hotDog.ToString() + " cachorro quente";
+
             atualizar = false;
         }
+
     }
 
     public void OnClickCalcular() {

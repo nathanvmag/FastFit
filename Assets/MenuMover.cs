@@ -14,11 +14,15 @@ public class MenuMover : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, -10), new Vector3(Scenes[goTO].transform.position.x, Scenes[goTO].transform.position.y,-10), 5 * Time.deltaTime);
+        transform.position = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, -10), new Vector3(Scenes[goTO].transform.position.x, Scenes[goTO].transform.position.y,-10), 10     * Time.deltaTime);
 	}
     public void layoutControler(int where)
     {
         goTO = where;
-        Debug.Log("CLique");
     }
+    public void Notify()
+    {
+        Notification.SendNotification("Ola jamv", "VOCE PEDIU VOCE TEM", 0);
+    }
+
 }
