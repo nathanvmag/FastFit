@@ -136,7 +136,7 @@ public class Calculator : MonoBehaviour {
         total = burgerKcal * burger + pizzaKcal * pizza + chocolateKcal * choc + cokeKcal * coke + friesKcal * fries + iceCreamKcal * iceCream + hotDogKcal * hotDog;
 		MenuMover.goTO = 5;
 
-        result.text = total.ToString();
+        result.text = total.ToString() + " kcal";
     }
 
     public void OnClickVoltarCalc() {

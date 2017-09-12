@@ -7,7 +7,7 @@ public class PDCButtons : MonoBehaviour {
     //Botões da Cena Partes do Corpo
     public void OnClickGluteos()
     {
-        SceneManager.LoadScene("gluteos");
+       
     }
     public void OnClickCoxas()
     {
