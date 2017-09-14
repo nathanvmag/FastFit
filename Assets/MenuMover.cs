@@ -10,11 +10,17 @@ public class MenuMover : MonoBehaviour {
     Sprite[] menus;
     [SerializeField]
     Image menuImg;
+    public Image Novidades;
+    public Image bolinhas;
+    public Sprite[] novImages;
+    public Sprite[] bolimages;
+    int controlnovidade;
     public static int goTO;
 	// Use this for initialization
 	void Start () {
         goTO = 2;
-		
+        controlnovidade = 0;
+        StartCoroutine(controlNovidades());
 	}
 	
 	// Update is called once per frame
@@ -32,6 +38,18 @@ public class MenuMover : MonoBehaviour {
     public void Notify()
     {
         Notification.SendNotification("Ola jamv", "VOCE PEDIU VOCE TEM", 0);
+    }
+    IEnumerator controlNovidades()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5);
+            if (controlnovidade < 2) controlnovidade++;
+            else controlnovidade = 0;
+            Novidades.sprite = novImages[controlnovidade];
+            bolinhas.sprite = bolimages[controlnovidade];
+            
+        }
     }
 
 }
