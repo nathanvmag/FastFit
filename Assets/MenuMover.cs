@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuMover : MonoBehaviour {
     [SerializeField]
     GameObject[] Scenes;
+    [SerializeField]
+    Sprite[] menus;
+    [SerializeField]
+    Image menuImg;
     public static int goTO;
 	// Use this for initialization
 	void Start () {
@@ -19,6 +24,10 @@ public class MenuMover : MonoBehaviour {
     public void layoutControler(int where)
     {
         goTO = where;
+        if (where<=4)
+        {
+            menuImg.sprite = menus[goTO];
+        }
     }
     public void Notify()
     {
