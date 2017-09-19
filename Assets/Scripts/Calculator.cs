@@ -191,10 +191,14 @@ public class Calculator : MonoBehaviour {
     public void OnClickOK() {
         panel.SetActive(false);
     }
-   IEnumerator closeAviso()
+    IEnumerator closeAviso()
     {
         yield return new WaitForSeconds(5);
         aviso.SetActive(false);
         Debug.Log("fechou");
+    }
+    public void closeAviso1()
+    {
+        aviso.SetActive(false);
     }
 }
