@@ -84,7 +84,7 @@ public class Calculator : MonoBehaviour {
         hotDog--;
         atualizar = true;
     }
-
+    
     void Update()
     {
         valores = new int[7] { burger, pizza, choc, fries, iceCream, hotDog, coke };
