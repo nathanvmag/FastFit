@@ -162,14 +162,21 @@ public class Calculator : MonoBehaviour {
 
             }
         }
+        
     }
 
-    public void OnClickCalcular() {
+    public void OnClickCalcular()
+    {
         total = burgerKcal * burger + pizzaKcal * pizza + chocolateKcal * choc + cokeKcal * coke + friesKcal * fries + iceCreamKcal * iceCream + hotDogKcal * hotDog;
-        MenuMover.goTO = 5;
-        StartCoroutine(closeAviso());
-        aviso.SetActive(true);
-        result.text = total.ToString() + " kcal";
+        if (total != 0)
+        {
+            MenuMover.goTO = 5;
+
+            StartCoroutine(closeAviso());
+            aviso.SetActive(true);
+            result.text = total.ToString() + " kcal";
+        }
+        else Debug.Log("Sem");
     }
 
     public void OnClickVoltarCalc() {
