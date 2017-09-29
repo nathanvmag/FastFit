@@ -208,4 +208,16 @@ public class Calculator : MonoBehaviour {
     {
         aviso.SetActive(false);
     }
+
+    public void OnClickClear()
+    {
+        burger = 0;
+        pizza = 0;
+        choc = 0;
+        coke = 0;
+        fries = 0;
+        iceCream = 0;
+        hotDog = 0;
+        
+    }
 }
