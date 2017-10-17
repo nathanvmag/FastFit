@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Newtonsoft.Json;
 public class MenuMover : MonoBehaviour {
     [SerializeField]
     GameObject[] Scenes;
@@ -16,11 +16,14 @@ public class MenuMover : MonoBehaviour {
     public Sprite[] bolimages;
     int controlnovidade;
     public static int goTO;
+    bool[] dasdada = new bool[5] { true, true, true, true, true };
 	// Use this for initialization
 	void Start () {
         goTO = 2;
         controlnovidade = 0;
         StartCoroutine(controlNovidades());
+       
+       
 	}
 	
 	// Update is called once per frame
