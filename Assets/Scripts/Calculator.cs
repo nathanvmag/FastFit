@@ -147,9 +147,9 @@ public class Calculator : MonoBehaviour {
         {
             if (valores[i] > 0)
             {
-                txs[i].enabled = true;
+                txs[i].gameObject.SetActive( true);
             }
-            else txs[i].enabled = false;
+            else txs[i].gameObject.SetActive(false);
         }
         if (atualizar)
         {
@@ -169,50 +169,55 @@ public class Calculator : MonoBehaviour {
             else if (burger == 1)
             {
                 burgerNum.text = burger.ToString() + " hambúrguer";
-                lines[0].SetActive(true);
+                
             }
-            else lines[0].SetActive(false);
+            
 
             if (pizza > 1) pizzaNum.text = pizza.ToString() + " pizzas";
             else if (pizza == 1)
             {
                 pizzaNum.text = pizza.ToString() + " pizza";
-                lines[1].SetActive(true);
+               
             }
-            else lines[1].SetActive(false);
+            
 
             if (choc > 1) chocNum.text = choc.ToString() + " chocolates";
             else if (choc == 1)
             {
                 chocNum.text = choc.ToString() + " chocolate";
-                lines[2].SetActive(true);
+               
             }
-            else lines[2].SetActive(false);
+          ;
 
             if (coke > 1) cokeNum.text = coke.ToString() + " refrigerantes";
             else if (coke == 1)
             {
                 cokeNum.text = coke.ToString() + " refrigerante";
-                lines[3].SetActive(true);
+               
             }
-            else lines[3].SetActive(false);
+          
 
             if (fries > 1) friesNum.text = fries.ToString() + " batatas fritas";
             else if (fries == 1)
             {
                 friesNum.text = fries.ToString() + " batata frita";
-                lines[4].SetActive(true);
+              
             }
-            else lines[4].SetActive(false);
+          
 
             if (iceCream > 1) iceNum.text = iceCream.ToString() + " sorvetes";
             else if (iceCream == 1)
             {
                 iceNum.text = iceCream.ToString() + " sorvete";
-                lines[5].SetActive(true);
+               
             }
+<<<<<<< HEAD
             else lines[5].SetActive(false);
                      
+=======
+          
+
+>>>>>>> origin/master
             if (hotDog > 1) hotNum.text = hotDog.ToString() + " cachorros quentes";
             else
             {

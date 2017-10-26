@@ -33,11 +33,9 @@ public class ControlCalendar : MonoBehaviour {
                 
                 serializedsValues = JsonConvert.DeserializeObject<bool[,]>(read()) ;
                
-                for (int i = 0; i < serializedsValues.GetLength(1); i++)
-                {
-                    gb.GetComponent<dayweek>().values[i] = serializedsValues[int.Parse(gb.name), i];
-                }
                 Debug.Log("Pegou do save");
+                
+
             }
             catch (System.Exception e)
             {
@@ -65,6 +63,12 @@ public class ControlCalendar : MonoBehaviour {
         GameObject father = GameObject.FindGameObjectWithTag("calendarContent");
         if (!gb.GetComponent<dayweek>().isOpen)
         {
+
+            for (int i = 0; i < serializedsValues.GetLength(1); i++)
+            {
+                gb.GetComponent<dayweek>().values[i] = serializedsValues[int.Parse(gb.name), i];
+
+            }
             GameObject horario = Instantiate(horarioprefab, father.transform.position, Quaternion.identity, father.transform) as GameObject;
             father.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 276);
             horario.transform.SetSiblingIndex(gb.transform.GetSiblingIndex() + 1);
