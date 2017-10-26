@@ -211,13 +211,9 @@ public class Calculator : MonoBehaviour {
                 iceNum.text = iceCream.ToString() + " sorvete";
                
             }
-<<<<<<< HEAD
-            else lines[5].SetActive(false);
+            
                      
-=======
-          
 
->>>>>>> origin/master
             if (hotDog > 1) hotNum.text = hotDog.ToString() + " cachorros quentes";
             else
             {
@@ -228,33 +224,33 @@ public class Calculator : MonoBehaviour {
             else if (beer == 1)
             {
                 beerNum.text = beer.ToString() + " cerveja";
-                lines[5].SetActive(true);
+               
             }
-            else lines[5].SetActive(false);
+           
             
             if (acai > 1) acaiNum.text = acai.ToString() + " açaís";
             else if (acai == 1)
             {
                 acaiNum.text = acai.ToString() + " açaí";
-                lines[5].SetActive(true);
+               
             }
-            else lines[5].SetActive(false);
+          
 
             if (salgadinho > 1) salgadinhoNum.text = salgadinho.ToString() + " salgadinhos";
             else if (salgadinho == 1)
             {
                 salgadinhoNum.text = salgadinho.ToString() + " salgadinho";
-                lines[5].SetActive(true);
+               
             }
-            else lines[5].SetActive(false);
+            
 
             if (coxinha > 1) coxinhaNum.text = coxinha.ToString() + " coxinhas";
             else if (coxinha == 1)
             {
                 coxinhaNum.text = coxinha.ToString() + " coxinha";
-                lines[5].SetActive(true);
+                
             }
-            else lines[5].SetActive(false);
+           
         }
         
     }
