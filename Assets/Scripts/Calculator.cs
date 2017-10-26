@@ -5,18 +5,32 @@ using UnityEngine.UI;
 
 public class Calculator : MonoBehaviour {
 
-    float burgerKcal = 643;
-    float pizzaKcal = 338;
-    float chocolateKcal = 520;
-    float cokeKcal = 200;
-    float friesKcal = 274;
-    float iceCreamKcal = 200;
-    float hotDogKcal = 520;
-    float total;
-    public int burger, pizza, choc, coke, fries, iceCream, hotDog;
-    public Text burgerNum, pizzaNum, chocNum, cokeNum, friesNum, iceNum, hotNum, result;
-    public Button burgerPlus, burgerMinus, pizzaPlus, pizzaMinus, chocPlus, chocMinus, cokePlus, cokeMinus,
-        friesPlus, friesMinus, icePlus, iceMinus, hotPlus, hotMinus, calcular;
+    float burgerKcal = 643, 
+          pizzaKcal = 338,
+          chocolateKcal = 520,
+          cokeKcal = 200,
+          friesKcal = 274,
+          iceCreamKcal = 200,
+          hotDogKcal = 520,
+          beerKcal = 146, 
+          salgadinhoKcal = 510, 
+          acaiKcal = 320, 
+          coxinhaKcal = 330,
+          total;
+    public int burger, pizza, choc, coke, fries, iceCream, hotDog, beer, salgadinho, acai, coxinha;
+    public Text burgerNum, pizzaNum, chocNum, cokeNum, friesNum, iceNum, hotNum, beerNum, salgadinhoNum, acaiNum, coxinhaNum, result;
+    public Button burgerPlus, burgerMinus,
+        pizzaPlus, pizzaMinus,
+        chocPlus, chocMinus,
+        cokePlus, cokeMinus,
+        friesPlus, friesMinus,
+        icePlus, iceMinus,
+        hotPlus, hotMinus,
+        beerPlus, beerMinus,
+        salgadinhoPlus, salgadinhoMinus,
+        acaiPlus, acaiMinus,
+        coxinhaPlus, coxinhaMinus,
+        calcular;
     public GameObject deact, act, panel;
     public int[] valores;
     public Text[] txs;
@@ -25,8 +39,8 @@ public class Calculator : MonoBehaviour {
     public GameObject aviso;
     public void Start()
     {
-        valores = new int[7] { burger, pizza, choc, fries, iceCream, hotDog, coke };
-        txs = new Text[7] { burgerNum, pizzaNum, chocNum, friesNum, iceNum, hotNum, cokeNum };
+        valores = new int[11] { burger, pizza, choc, fries, iceCream, hotDog, beer, salgadinho, acai, coxinha, coke };
+        txs = new Text[11] { burgerNum, pizzaNum, chocNum, friesNum, iceNum, hotNum, beerNum, salgadinhoNum, acaiNum, coxinhaNum, cokeNum};
     }
     public void OnClickBurgerPlus() {
         burger += 1;
@@ -84,11 +98,51 @@ public class Calculator : MonoBehaviour {
         hotDog--;
         atualizar = true;
     }
+    public void OnClickBeerPlus()
+    {
+        beer++;
+        atualizar = true;
+    }
+    public void OnClickBeerMinus()
+    {
+        beer--;
+        atualizar = true;
+    }
+    public void OnClickAcaiPlus()
+    {
+        acai++;
+        atualizar = true;
+    }
+    public void OnClickAcaiMinus()
+    {
+        acai--;
+        atualizar = true;
+    }
+    public void OnClickSalgadinhosPlus()
+    {
+        salgadinho++;
+        atualizar = true;
+    }
+    public void OnClickSalgadinhosMinus()
+    {
+        salgadinho--;
+        atualizar = true;
+    }
+    public void OnClickCoxinhaPlus()
+    {
+        coxinha++;
+        atualizar = true;
+    }
+    public void OnClickCoxinhaMinus()
+    {
+        coxinha--;
+        atualizar = true;
+    }
     
     void Update()
     {
-        valores = new int[7] { burger, pizza, choc, fries, iceCream, hotDog, coke };
-        txs = new Text[7] { burgerNum, pizzaNum, chocNum, friesNum, iceNum, hotNum, cokeNum };
+        valores = new int[11] { burger, pizza, choc, fries, iceCream, hotDog, coke, beer, acai, salgadinho, coxinha };
+        txs = new Text[11] { burgerNum, pizzaNum, chocNum, friesNum, iceNum, hotNum, cokeNum, beerNum, acaiNum, salgadinhoNum, coxinhaNum };
         for (int i = 0; i < valores.Length; i++)
         {
             if (valores[i] > 0)
@@ -106,6 +160,10 @@ public class Calculator : MonoBehaviour {
             if (fries < 0) { fries = 0; }
             if (iceCream < 0) { iceCream = 0; }
             if (hotDog < 0) { hotDog = 0; }
+            if (beer < 0) { beer = 0; }
+            if (salgadinho < 0) { salgadinho = 0; }
+            if (acai < 0) { acai = 0; }
+            if (coxinha < 0) { coxinha = 0; }
 
             if (burger > 1) burgerNum.text = burger.ToString() + " hambúrgueres";
             else if (burger == 1)
@@ -154,20 +212,61 @@ public class Calculator : MonoBehaviour {
                 lines[5].SetActive(true);
             }
             else lines[5].SetActive(false);
-
+                     
             if (hotDog > 1) hotNum.text = hotDog.ToString() + " cachorros quentes";
             else
             {
                 hotNum.text = hotDog.ToString() + " cachorro quente";
-
             }
+
+            if (beer > 1) beerNum.text = beer.ToString() + " cervejas";
+            else if (beer == 1)
+            {
+                beerNum.text = beer.ToString() + " cerveja";
+                lines[5].SetActive(true);
+            }
+            else lines[5].SetActive(false);
+            
+            if (acai > 1) acaiNum.text = acai.ToString() + " açaís";
+            else if (acai == 1)
+            {
+                acaiNum.text = acai.ToString() + " açaí";
+                lines[5].SetActive(true);
+            }
+            else lines[5].SetActive(false);
+
+            if (salgadinho > 1) salgadinhoNum.text = salgadinho.ToString() + " salgadinhos";
+            else if (salgadinho == 1)
+            {
+                salgadinhoNum.text = salgadinho.ToString() + " salgadinho";
+                lines[5].SetActive(true);
+            }
+            else lines[5].SetActive(false);
+
+            if (coxinha > 1) coxinhaNum.text = coxinha.ToString() + " coxinhas";
+            else if (coxinha == 1)
+            {
+                coxinhaNum.text = coxinha.ToString() + " coxinha";
+                lines[5].SetActive(true);
+            }
+            else lines[5].SetActive(false);
         }
         
     }
 
     public void OnClickCalcular()
     {
-        total = burgerKcal * burger + pizzaKcal * pizza + chocolateKcal * choc + cokeKcal * coke + friesKcal * fries + iceCreamKcal * iceCream + hotDogKcal * hotDog;
+        total = burgerKcal * burger + 
+                pizzaKcal * pizza + 
+                chocolateKcal * choc + 
+                cokeKcal * coke + 
+                friesKcal * fries + 
+                iceCreamKcal * iceCream + 
+                hotDogKcal * hotDog +
+                beerKcal * beer +
+                acaiKcal * acai +
+                salgadinhoKcal * salgadinho +
+                coxinhaKcal * coxinha;
         if (total != 0)
         {
             MenuMover.goTO = 5;
@@ -189,10 +288,11 @@ public class Calculator : MonoBehaviour {
         fries = 0;
         iceCream = 0;
         hotDog = 0;
+        beer = 0;
+        coxinha = 0;
+        salgadinho = 0;
+        acai = 0;
         atualizar = true;
-       
-
-
     }
 
     public void OnClickOK() {
@@ -218,6 +318,9 @@ public class Calculator : MonoBehaviour {
         fries = 0;
         iceCream = 0;
         hotDog = 0;
-        
+        acai = 0;
+        beer = 0;
+        salgadinho = 0;
+        coxinha = 0;
     }
 }
