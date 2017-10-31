@@ -16,14 +16,13 @@ public class MenuMover : MonoBehaviour {
     public Sprite[] bolimages;
     int controlnovidade;
     public static int goTO;
+    public int controlarNovidades = 2;
     bool[] dasdada = new bool[5] { true, true, true, true, true };
 	// Use this for initialization
 	void Start () {
         goTO = 2;
         controlnovidade = 0;
         StartCoroutine(controlNovidades());
-       
-       
 	}
 	
 	// Update is called once per frame
@@ -46,7 +45,7 @@ public class MenuMover : MonoBehaviour {
     {
         while (true)
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(controlarNovidades);
             if (controlnovidade < 2) controlnovidade++;
             else controlnovidade = 0;
             Novidades.sprite = novImages[controlnovidade];
@@ -54,5 +53,4 @@ public class MenuMover : MonoBehaviour {
             
         }
     }
-
 }

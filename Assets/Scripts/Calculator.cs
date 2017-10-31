@@ -271,8 +271,6 @@ public class Calculator : MonoBehaviour {
         if (total != 0)
         {
             MenuMover.goTO = 5;
-
-            StartCoroutine(closeAviso());
             aviso.SetActive(true);
             result.text = total.ToString() + " kcal";
         }
@@ -299,17 +297,10 @@ public class Calculator : MonoBehaviour {
     public void OnClickOK() {
         panel.SetActive(false);
     }
-    IEnumerator closeAviso()
-    {
-        yield return new WaitForSeconds(5);
-        aviso.SetActive(false);
-        Debug.Log("fechou");
-    }
     public void closeAviso1()
     {
         aviso.SetActive(false);
     }
-
     public void OnClickClear()
     {
         burger = 0;
