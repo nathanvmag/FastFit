@@ -18,6 +18,7 @@ public class MenuMover : MonoBehaviour {
     public static int goTO;
     public int controlarNovidades = 2;
     bool[] dasdada = new bool[5] { true, true, true, true, true };
+    public Sprite playbt;
 	// Use this for initialization
 	void Start () {
         goTO = 2;
@@ -51,6 +52,15 @@ public class MenuMover : MonoBehaviour {
             Novidades.sprite = novImages[controlnovidade];
             bolinhas.sprite = bolimages[controlnovidade];
             
+        }
+    }
+    public void showgif(GameObject g)
+    
+    {
+        g.GetComponent<Animator>().enabled = !g.GetComponent<Animator>().enabled;
+        if (!g.GetComponent<Animator>().enabled)
+        {
+            g.GetComponent<Image>().sprite = playbt;
         }
     }
 }
