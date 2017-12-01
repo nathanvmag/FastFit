@@ -30,12 +30,9 @@ public class ControlCalendar : MonoBehaviour {
         {
             try
             {
-                
                 serializedsValues = JsonConvert.DeserializeObject<bool[,]>(read()) ;
                
                 Debug.Log("Pegou do save");
-                
-
             }
             catch (System.Exception e)
             {
